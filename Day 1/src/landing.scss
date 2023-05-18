@@ -16,21 +16,19 @@
   text-transform: capitalize;
   letter-spacing: 0.5rem;
   text-shadow: 0.3rem 0.3rem 0.3rem #000;
-  top: 20px;
-  left: 20px;
 }
 
 .landing_icon {
-  display: none;
   position: absolute;
   font-size: 35rem;
   color: #a79a2d;
   text-shadow: 0.2rem 0.2rem 0.2rem #000;
-  bottom: 40%;
+  transform: translate(-50%, -50%) scale(0);
 }
-.landing_container_icons {
-  position: relative;
-  background-color: #fff;
-  width: 100px;
-  height: 100px;
+
+.active_icon {
+  transform: translate(-50%, -50%) scale(1);
 }
+/*@for $i from 1 through 10 {
+  .landing_icon: nth-child($1);
+}*/
