@@ -1,12 +1,13 @@
-import { useState } from "react";
 import Landing from "./Landing";
+import Cards from "./Cards";
+import Gallery from "./gallery";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Landing />
+      <Cards />
+      <Gallery />
     </>
   );
 }

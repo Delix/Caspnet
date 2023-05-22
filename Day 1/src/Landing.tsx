@@ -25,46 +25,45 @@ const icons: any = [
   faStroopwafel,
   faSeedling,
 ];
-
+// Need to learn more about requestAnimationFrame and useRef-array
 const Landing = () => {
   const [classNumber, setClassnumber] = useState<number>(0);
-  const refa = useRef(new Array(10));
-  const slider_animation = () => {
+  //const refa = useRef([]);
+  /* const slider_animation = (time) => {
     if (classNumber > icons.length - 1) {
+
       setClassnumber((prev: number) => prev - prev);
     } else {
       console.log(classNumber);
       setClassnumber((prev: number) => prev + 1);
     }
-  };
+  };*/
   useEffect(() => {
-    /* const interval = setInterval(() => {
+    const interval = setInterval(() => {
       setClassnumber((prev: number) => prev + 1);
     }, 2000);
-  
-    return () => clearInterval(interval);*/
-    console.log(refa.current.length);
-    refa.current[classNumber] = requestAnimationFrame(slider_animation);
 
-    return () => cancelAnimationFrame(refa.current[classNumber]);
+    return () => clearInterval(interval);
+    //  refa.current[classNumber] = requestAnimationFrame(slider_animation);
+    // return () => cancelAnimationFrame(refa.current[classNumber]);
   }, []);
-  /*  useEffect(() => {
+
+  useEffect(() => {
     const time = 2000 * icons.length;
     const interval = setInterval(() => {
       setClassnumber((prev: number) => prev - prev);
     }, time);
 
     return () => clearInterval(interval);
-  }, []);*/
-  console.log(classNumber);
+  }, []);
+
   return (
     <div className="landing">
-      <h1 className="landing_heading">Variety of Foods</h1>
+      <h1>Variety of Foods</h1>
 
       <div>
         {icons.map((icon: any, index: number) => (
           <FontAwesomeIcon
-            ref={(element) => refa.current.push(element)}
             className={
               "landing_icon " + (classNumber == index ? "active_icon" : "")
             }
