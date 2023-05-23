@@ -1,6 +1,7 @@
 import Landing from "./Landing";
 import Cards from "./Cards";
 import Gallery from "./gallery";
+import Footer from "./footer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Landing />
       <Cards />
       <Gallery />
+      <Footer />
     </>
   );
 }
