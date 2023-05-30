@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEgg,
@@ -11,9 +11,10 @@ import {
   faFish,
   faCookie,
   faSeedling,
+  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import "./landing.scss";
-const icons: any = [
+const icons: IconDefinition[] = [
   faEgg,
   faCheese,
   faHotdog,
@@ -62,7 +63,7 @@ const Landing = () => {
       <h1>Variety of Foods</h1>
 
       <div>
-        {icons.map((icon: any, index: number) => (
+        {icons.map((icon: IconDefinition, index: number) => (
           <FontAwesomeIcon
             className={
               "landing_icon " + (classNumber == index ? "active_icon" : "")

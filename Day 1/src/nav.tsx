@@ -10,13 +10,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./nav.scss";
 const icons = [faHome, faUtensils, faBurger, faPizzaSlice, faBlenderPhone];
 const titles = ["Home", "Meals", "Burger", "Pizza", "Contact"];
-const nav = () => {
-  const changeview = useRef();
-  const anchor = useRef();
-  const changeopacity = useRef([]);
+const Nav = () => {
+  const changeview = useRef<HTMLElement | null>(null);
+  const anchor = useRef<HTMLDivElement | null>(null);
+  const changeopacity = useRef<HTMLAnchorElement[]>([]);
   const changeStyle = () => {
-    anchor.current.classList.toggle("change");
-    changeview.current.classList.toggle("change");
+    anchor.current?.classList.toggle("change");
+    changeview.current?.classList.toggle("change");
     changeopacity.current.forEach((element) => {
       element.classList.toggle("change");
       console.log(element);
@@ -31,7 +31,7 @@ const nav = () => {
       </div>
       {icons.map((icon, index) => (
         <a
-          ref={(e) => changeopacity.current.push(e)}
+          ref={(e: HTMLAnchorElement) => changeopacity.current.push(e)}
           className="navbar_link"
           key={index}
         >
@@ -43,4 +43,4 @@ const nav = () => {
   );
 };
 
-export default nav;
+export default Nav;

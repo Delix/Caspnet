@@ -38,3 +38,15 @@ h3 {
  1rem = 16px
  1rem = 10px = 62.5%
 */
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 20%;
+  }
+}
